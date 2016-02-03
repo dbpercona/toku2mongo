@@ -1,0 +1,9 @@
+[submodule "ft-index"]
+	path = src/third_party/ft-index
+	url = https://github.com/Tokutek/ft-index
+[submodule "jemalloc"]
+	path = src/third_party/jemalloc
+	url = https://github.com/percona/jemalloc.git
+[submodule "backup"]
+	path = src/third_party/backup
+	url = https://github.com/percona/backup-community.git
