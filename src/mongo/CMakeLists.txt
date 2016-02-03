@@ -605,10 +605,14 @@ foreach (tool
     mongofiles
     mongobridge
     bsondump
-    toku2mongo
     )
   add_dependencies(${tool} generate_error_codes generate_action_types install_tdb_h)
-  if (NOT APPLE)
+  add_dependencies(toku2mongo generate_error_codes generate_action_types install_tdb_h)
+
+#  target_link_whole_libraries(toku2mongo jemalloc)  
+  target_link_libraries(toku2mongo jemalloc tokufractaltree_static tokuportability_static all_tool_deps alltools ${TOKUMX_SSL_LIBRARIES})
+
+if (NOT APPLE)
     target_link_whole_libraries(${tool}
       jemalloc
       )
